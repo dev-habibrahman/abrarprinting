@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abrar Advertising & Printing - Deira, Dubai</title>
+  
+  <!-- Google Fonts: Poppins & Bricolage Grotesque -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;800&display=swap">
+
+  <style>
+    :root {
+      --abrar-navy: #0A192F;
+      --abrar-navy-light: #112240;
+      --abrar-cyan: #00A4E4;
+      --abrar-magenta: #E4007C;
+      --abrar-yellow: #FFB81C;
+      --abrar-white: #FFFFFF;
+      --abrar-offwhite: #F7F9FC;
+      --abrar-border: #E2E8F0;
+      --abrar-text: #334155;
+      --abrar-text-muted: #64748B;
+      --abrar-radius: 12px;
+      --abrar-shadow: 0 10px 30px rgba(10, 25, 47, 0.08);
+      --abrar-shadow-lg: 0 20px 45px rgba(10, 25, 47, 0.14);
+      --abrar-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+      /* Layout tokens */
+      --header-h: 76px;
+      --logo-h: 52px;
+      --container-max: 1200px;
+      --gutter: 24px;
+      --section-y: clamp(52px, 6vw, 72px);
+      --head-gap: clamp(30px, 4vw, 44px);
+      --about-ink: #062863;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .abrar-site * { transition: none !important; }
+      .abrar-hero-content > * { animation: none !important; }
+    }
+
+    .abrar-site :focus-visible {
+      outline: 3px solid var(--abrar-cyan);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .abrar-site *,
+    .abrar-site *::before,
+    .abrar-site *::after {
+      box-sizing: border-box;
+    }
+
+    .abrar-site {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--abrar-text);
+      background-color: var(--abrar-white);
+      line-height: 1.65;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .abrar-site h1,
+    .abrar-site h2,
+    .abrar-site h3,
+    .abrar-site h4,
+    .abrar-site p,
+    .abrar-site ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .abrar-site ul {
+      list-style: none;
+    }
+
+    .abrar-site a {
+      text-decoration: none;
+    }
+
+    .abrar-site img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .abrar-container {
+      width: 100%;
+      max-width: calc(var(--container-max) + var(--gutter) * 2);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    .abrar-section {
+      padding: var(--section-y) 0;
+      scroll-margin-top: var(--header-h);
+    }
+
+    /* CMYK Accent Bar */
+    .abrar-cmyk-bar {
+      display: flex;
+      width: 72px;
+      height: 4px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .abrar-cmyk-bar.centered {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .abrar-cmyk-bar span {
+      flex: 1;
+    }
+
+    .abrar-cmyk-bar .c { background: var(--abrar-cyan); }
+    .abrar-cmyk-bar .m { background: var(--abrar-magenta); }
+    .abrar-cmyk-bar .y { background: var(--abrar-yellow); }
+    .abrar-cmyk-bar .k { background: var(--abrar-navy); }
+
+    /* Section Headers */
+    .abrar-section-header {
+      text-align: center;
+      margin: 0 auto var(--head-gap);
+    }
+
+    .abrar-section-header .abrar-cmyk-bar {
+      margin-bottom: 14px;
+    }
+
+    .abrar-eyebrow {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--abrar-cyan);
+      margin-bottom: 10px;
+    }
+
+    .abrar-section-title {
+      font-family: 'Bricolage Grotesque', 'Poppins', sans-serif;
+      font-size: clamp(28px, 3.4vw, 40px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -1.4px;
+      color: var(--about-ink);
+      margin-bottom: 14px;
+      text-wrap: balance;
+    }
+
+    .abrar-section-title span {
+      color: var(--abrar-magenta);
+    }
+
+    .abrar-section-subtitle {
+      font-size: 17px;
+      color: var(--abrar-text-muted);
+    }
+
+    /* Buttons */
+    .abrar-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--abrar-transition);
+      text-align: center;
+    }
+
+    .abrar-btn-primary {
+      background-color: var(--abrar-yellow);
+      color: var(--abrar-navy-light);
+      box-shadow: 0 8px 20px rgba(255, 184, 28, 0.32);
+    }
+
+    .abrar-btn-primary:hover {
+      background-color: #FFC947;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(255, 184, 28, 0.42);
+    }
+
+    .abrar-btn-whatsapp {
+      background-color: #25D366;
+      color: var(--abrar-white);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.28);
+    }
+
+    .abrar-btn-whatsapp:hover {
+      background-color: #1fb858;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(37, 211, 102, 0.38);
+    }
+
+    .abrar-btn-block {
+      width: 100%;
+    }
+
+    /* 1. STICKY NAVBAR */
+    .abrar-header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--abrar-border);
+      box-shadow: 0 4px 20px rgba(10, 25, 47, 0.04);
+    }
+
+    .abrar-navbar {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 28px;
+      height: var(--header-h);
+    }
+
+    .abrar-logo-link {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .abrar-logo-img {
+      height: var(--logo-h);
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+      filter: contrast(1.04) brightness(1.02);
+    }
+
+    .abrar-nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .abrar-nav-links a {
+      font-size: 14px;
+      white-space: nowrap;
+      font-weight: 600;
+      color: var(--abrar-navy);
+      position: relative;
+      padding: 6px 0;
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--abrar-cyan), var(--abrar-magenta));
+      transition: width 0.3s ease;
+    }
+
+    .abrar-nav-links a:hover {
+      color: var(--abrar-cyan);
+    }
+
+    .abrar-nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .abrar-header-action {
+      display: flex;
+      align-items: center;
+    }
+
+    .abrar-nav-cta {
+      display: inline-block;
+      white-space: nowrap;
+      background-color: var(--abrar-yellow);
+      color: var(--abrar-navy);
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(255, 184, 28, 0.3);
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-nav-cta:hover {
+      background-color: var(--abrar-navy);
+      color: var(--abrar-white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(10, 25, 47, 0.3);
+    }
+
+    .abrar-menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--abrar-border);
+      border-radius: 6px;
+      padding: 8px;
+      cursor: pointer;
+      color: var(--abrar-navy);
+    }
+
+    /* 1B. HERO SECTION */
+    .abrar-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: clamp(620px, 92vh, 840px);
+      overflow: hidden;
+      background-color: var(--abrar-navy);
+      color: var(--abrar-white);
+      scroll-margin-top: 0;
+    }
+
+    .abrar-hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .abrar-hero-media img {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .abrar-hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(circle at 88% 14%, rgba(0, 164, 228, 0.28), transparent 42%),
+        radial-gradient(circle at 70% 70%, rgba(228, 0, 124, 0.18), transparent 45%),
+        linear-gradient(105deg, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.86) 55%, rgba(10, 25, 47, 0.62) 100%);
+    }
+
+    .abrar-hero::after {
+      content: '';
+      position: absolute;
+      right: -40px;
+      bottom: 60px;
+      width: 520px;
+      height: 520px;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.7) 2px, transparent 2.6px);
+      background-size: 24px 24px;
+      -webkit-mask-image: radial-gradient(circle at 100% 100%, #000 0%, transparent 70%);
+      mask-image: radial-gradient(circle at 100% 100%, #000 0%, transparent 70%);
+    }
+
+    .abrar-hero-body {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: calc(var(--header-h) + 40px) 0 48px;
+    }
+
+    .abrar-hero-body .abrar-container {
+      width: 100%;
+    }
+
+    .abrar-hero-content {
+      max-width: 800px;
+    }
+
+    .abrar-hero-meta {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--abrar-yellow);
+      margin-bottom: 26px;
+      backdrop-filter: blur(6px);
+    }
+
+    .abrar-hero-sep {
+      opacity: 0.6;
+    }
+
+    .abrar-hero-content .abrar-hero-title {
+      font-family: 'Bricolage Grotesque', 'Poppins', sans-serif;
+      font-size: clamp(34px, 5.6vw, 66px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -1.2px;
+      color: var(--abrar-white);
+      margin-bottom: 22px;
+      text-wrap: balance;
+    }
+
+    .abrar-hero-content .abrar-cmyk-bar {
+      width: 104px;
+      height: 5px;
+      margin-bottom: 26px;
+    }
+
+    .abrar-hero-content .abrar-hero-subtitle {
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 660px;
+      margin-bottom: 36px;
+    }
+
+    .abrar-hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .abrar-hero-ctas .abrar-btn {
+      padding: 16px 32px;
+      font-size: 16px;
+    }
+
+    .abrar-btn-outline-light {
+      background: transparent;
+      color: var(--abrar-white);
+      border: 2px solid rgba(255, 255, 255, 0.55);
+    }
+
+    .abrar-btn-outline-light:hover {
+      background: var(--abrar-white);
+      color: var(--abrar-navy);
+      border-color: var(--abrar-white);
+      transform: translateY(-2px);
+    }
+
+    /* Bottom metrics strip */
+    .abrar-hero-strip {
+      position: relative;
+      z-index: 2;
+      background: rgba(10, 25, 47, 0.72);
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .abrar-hero-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .abrar-hero-metric {
+      padding: 24px 20px;
+      text-align: center;
+      border-left: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .abrar-hero-metric:first-child {
+      border-left: 0;
+    }
+
+    .abrar-hero-metric-val {
+      font-family: 'Bricolage Grotesque', 'Poppins', sans-serif;
+      font-size: clamp(22px, 2.6vw, 32px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--abrar-white);
+      margin-bottom: 4px;
+    }
+
+    .abrar-tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .abrar-hero-metric-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.72);
+      letter-spacing: 0.3px;
+    }
+
+    @keyframes abrar-rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .abrar-hero-content > * {
+      animation: abrar-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+    .abrar-hero-content > :nth-child(2) { animation-delay: 0.08s; }
+    .abrar-hero-content > :nth-child(3) { animation-delay: 0.16s; }
+    .abrar-hero-content > :nth-child(4) { animation-delay: 0.24s; }
+    .abrar-hero-content > :nth-child(5) { animation-delay: 0.32s; }
+
+    /* 2. ABOUT US SECTION */
+    .abrar-about {
+      background-color: var(--abrar-white);
+    }
+
+    .abrar-about-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
+    }
+
+    .abrar-about-visual {
+      position: relative;
+      margin: 0;
+      width: 100%;
+      max-width: 620px;
+      aspect-ratio: 1 / 1;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--about-ink);
+      box-shadow: 0 30px 60px rgba(6, 40, 99, 0.18);
+      justify-self: start;
+      color: var(--abrar-white);
+    }
+
+    .abrar-about-visual > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+    }
+
+    .abrar-vis-shade {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(6, 40, 99, 0.72) 0%, rgba(6, 40, 99, 0.12) 30%, rgba(6, 40, 99, 0.12) 62%, rgba(6, 40, 99, 0.82) 100%),
+        linear-gradient(135deg, rgba(6, 40, 99, 0.35), rgba(60, 30, 120, 0.25));
+    }
+
+    .abrar-vis-label,
+    .abrar-vis-cap {
+      position: absolute;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .abrar-vis-label { color: rgba(255, 255, 255, 0.78); top: 6%; }
+    .abrar-vis-tr { right: 6%; }
+
+    .abrar-vis-cap { color: var(--abrar-yellow); bottom: 6%; font-size: 14px; }
+    .abrar-vis-bl { left: 6%; }
+    .abrar-vis-br { right: 6%; }
+
+    .abrar-vis-sticker {
+      position: absolute;
+      top: 25%;
+      right: 6%;
+      background: var(--abrar-yellow);
+      color: #111;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      line-height: 1.5;
+      text-transform: uppercase;
+      padding: 14px 18px;
+      transform: rotate(8deg);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .abrar-vis-tag {
+      position: absolute;
+      left: 8%;
+      bottom: 22%;
+      padding: 10px 18px;
+      border: 1px solid #1a9bef;
+      background: rgba(6, 40, 99, 0.55);
+      backdrop-filter: blur(4px);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transform: rotate(-6deg);
+    }
+
+    .abrar-vis-tag strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      color: #19a5f0;
+      letter-spacing: 0.5px;
+    }
+
+    .abrar-about-text .abrar-about-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: var(--about-ink);
+      margin-bottom: 22px;
+    }
+
+    .abrar-about-text h2 {
+      font-family: 'Bricolage Grotesque', 'Poppins', sans-serif;
+      font-size: clamp(28px, 3.4vw, 40px);
+      font-weight: 700;
+      line-height: 1.06;
+      letter-spacing: -1.4px;
+      color: var(--about-ink);
+      margin-bottom: 28px;
+      text-wrap: balance;
+    }
+
+    .abrar-about-text h2 span {
+      color: var(--abrar-magenta);
+    }
+
+    .abrar-about-text .abrar-about-lead {
+      font-size: clamp(18px, 1.7vw, 21px);
+      font-weight: 500;
+      line-height: 1.7;
+      color: var(--about-ink);
+      margin-bottom: 20px;
+    }
+
+    .abrar-about-text .abrar-about-body {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--abrar-text-muted);
+      margin-bottom: 32px;
+    }
+
+    .abrar-about-founder {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .abrar-about-founder .abrar-founder-photo {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      max-width: none;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 10px;
+      background: var(--abrar-yellow);
+      box-shadow: 0 6px 16px rgba(6, 40, 99, 0.15);
+    }
+
+    .abrar-about-text .abrar-cmyk-bar {
+      margin-bottom: 18px;
+    }
+
+    .abrar-about-founder strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--about-ink);
+      line-height: 1.3;
+    }
+
+    .abrar-about-founder div > span {
+      font-size: 15px;
+      color: var(--abrar-text-muted);
+    }
+
+    .abrar-about-text .abrar-about-trust {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 28px;
+      border-top: 1px solid var(--abrar-border);
+    }
+
+    .abrar-about-trust li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 1.7;
+      text-transform: uppercase;
+      color: var(--about-ink);
+    }
+
+    .abrar-about-trust svg {
+      flex-shrink: 0;
+      color: var(--abrar-cyan);
+    }
+
+    /* 3. OUR SERVICES SECTION */
+    .abrar-services {
+      background-color: var(--abrar-offwhite);
+    }
+
+    .abrar-services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .abrar-service-card {
+      background-color: var(--abrar-white);
+      border-radius: var(--abrar-radius);
+      overflow: hidden;
+      border: 1px solid var(--abrar-border);
+      box-shadow: var(--abrar-shadow);
+      transition: var(--abrar-transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .abrar-service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--abrar-shadow-lg);
+    }
+
+    .abrar-service-card.accent-cyan { border-top: 4px solid var(--abrar-cyan); }
+    .abrar-service-card.accent-magenta { border-top: 4px solid var(--abrar-magenta); }
+    .abrar-service-card.accent-yellow { border-top: 4px solid var(--abrar-yellow); }
+    .abrar-service-card.accent-navy { border-top: 4px solid var(--abrar-navy); }
+
+    .abrar-service-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .abrar-service-body {
+      padding: 24px 24px 28px;
+      flex: 1;
+    }
+
+    .abrar-service-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .abrar-service-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -46px;
+      margin-bottom: 16px;
+      background-color: var(--abrar-white);
+      box-shadow: 0 6px 16px rgba(10, 25, 47, 0.12);
+      position: relative;
+    }
+
+    .accent-cyan .abrar-service-icon { color: var(--abrar-cyan); }
+    .accent-magenta .abrar-service-icon { color: var(--abrar-magenta); }
+    .accent-yellow .abrar-service-icon { color: #d99600; }
+    .accent-navy .abrar-service-icon { color: var(--abrar-navy); }
+
+    .abrar-service-title {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--abrar-navy);
+      margin-bottom: 14px;
+    }
+
+    .abrar-service-list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 15px;
+      color: var(--abrar-text);
+      margin-bottom: 8px;
+    }
+
+    .abrar-service-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--abrar-cyan);
+    }
+
+    .accent-magenta .abrar-service-list li::before { background-color: var(--abrar-magenta); }
+    .accent-yellow .abrar-service-list li::before { background-color: var(--abrar-yellow); }
+    .accent-navy .abrar-service-list li::before { background-color: var(--abrar-navy); }
+
+    /* 4. PORTFOLIO SHOWCASE SECTION */
+    .abrar-portfolio {
+      background-color: var(--abrar-white);
+    }
+
+    .abrar-filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .abrar-filter-btn {
+      padding: 10px 20px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 1px solid var(--abrar-border);
+      background-color: var(--abrar-offwhite);
+      color: var(--abrar-navy);
+      cursor: pointer;
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-filter-btn:hover {
+      border-color: var(--abrar-cyan);
+      color: var(--abrar-cyan);
+    }
+
+    .abrar-filter-btn.active {
+      background-color: var(--abrar-navy);
+      color: var(--abrar-white);
+      border-color: var(--abrar-navy);
+    }
+
+    .abrar-portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .abrar-portfolio-item {
+      position: relative;
+      border-radius: var(--abrar-radius);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      box-shadow: var(--abrar-shadow);
+      background-color: var(--abrar-navy);
+    }
+
+    .abrar-portfolio-item.is-hidden {
+      display: none;
+    }
+
+    .abrar-portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .abrar-portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 25, 47, 0.92) 0%, rgba(10, 25, 47, 0.25) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      opacity: 0.9;
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-portfolio-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .abrar-portfolio-item:hover .abrar-portfolio-overlay {
+      background: linear-gradient(to top, rgba(10, 25, 47, 0.96) 0%, rgba(0, 164, 228, 0.35) 100%);
+    }
+
+    .abrar-portfolio-cat {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--abrar-yellow);
+      margin-bottom: 4px;
+    }
+
+    .abrar-portfolio-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--abrar-white);
+    }
+
+    /* 5. VALUED CLIENTS SECTION */
+    .abrar-clients {
+      background-color: var(--abrar-navy);
+      color: var(--abrar-white);
+    }
+
+    .abrar-clients .abrar-section-title {
+      color: var(--abrar-white);
+    }
+
+    .abrar-clients .abrar-section-subtitle {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .abrar-clients-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .abrar-client-card {
+      margin: 0;
+      background-color: var(--abrar-white);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--abrar-radius);
+      height: 150px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-client-card img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .abrar-client-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+      border-color: var(--abrar-cyan);
+    }
+
+    /* 6. CONTACT, LOCATION & QUOTE FORM */
+    .abrar-contact {
+      background-color: var(--abrar-offwhite);
+    }
+
+    .abrar-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .abrar-contact-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      color: var(--abrar-white);
+      padding: 40px;
+      border-radius: var(--abrar-radius);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(0, 164, 228, 0.24), transparent 46%),
+        radial-gradient(circle at 0% 100%, rgba(228, 0, 124, 0.16), transparent 52%),
+        var(--abrar-navy);
+      box-shadow: var(--abrar-shadow-lg);
+    }
+
+    .abrar-contact-card::before,
+    .abrar-form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    .abrar-contact-card::before {
+      background: linear-gradient(90deg,
+        var(--abrar-cyan) 0 33.33%, var(--abrar-magenta) 33.33% 66.66%, var(--abrar-yellow) 66.66% 100%);
+    }
+
+    .abrar-contact-card::after {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 220px;
+      height: 220px;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1.6px, transparent 2.2px);
+      background-size: 18px 18px;
+      -webkit-mask-image: radial-gradient(circle at 100% 0%, #000 0%, transparent 70%);
+      mask-image: radial-gradient(circle at 100% 0%, #000 0%, transparent 70%);
+    }
+
+    .abrar-contact-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .abrar-contact-card h3 {
+      font-family: 'Bricolage Grotesque', 'Poppins', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .abrar-contact-lead {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 26px;
+    }
+
+    .abrar-info-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .abrar-info-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 15px 0;
+    }
+
+    .abrar-info-item + .abrar-info-item {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .abrar-info-item:first-child { padding-top: 0; }
+
+    .abrar-info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background-color: rgba(0, 164, 228, 0.14);
+      border: 1px solid rgba(0, 164, 228, 0.28);
+      color: var(--abrar-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-info-item:hover .abrar-info-icon {
+      background-color: var(--abrar-cyan);
+      border-color: var(--abrar-cyan);
+      color: var(--abrar-navy);
+    }
+
+    .abrar-info-label {
+      display: block;
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--abrar-yellow);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .abrar-info-value {
+      font-size: 16px;
+      color: var(--abrar-white);
+      font-weight: 500;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .abrar-info-value a,
+    .abrar-info-value a:visited {
+      color: inherit;
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-info-value a:hover {
+      color: var(--abrar-cyan);
+      text-decoration: underline;
+    }
+
+    .abrar-contact-cta {
+      margin-top: auto;
+      padding-top: 28px;
+    }
+
+    .abrar-contact-cta .abrar-btn {
+      width: 100%;
+    }
+
+    /* Right: quote form */
+    .abrar-form-card {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--abrar-white);
+      padding: 40px;
+      border-radius: var(--abrar-radius);
+      border: 1px solid var(--abrar-border);
+      box-shadow: var(--abrar-shadow);
+    }
+
+    .abrar-form-card::before {
+      background: linear-gradient(90deg,
+        var(--abrar-cyan) 0 25%, var(--abrar-magenta) 25% 50%, var(--abrar-yellow) 50% 75%, var(--abrar-navy) 75% 100%);
+    }
+
+    .abrar-form-card h3 {
+      font-family: 'Bricolage Grotesque', 'Poppins', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--about-ink);
+      margin-bottom: 8px;
+    }
+
+    .abrar-form-sub {
+      font-size: 15px;
+      color: var(--abrar-text-muted);
+      margin-bottom: 26px;
+    }
+
+    .abrar-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .abrar-form-group {
+      margin-bottom: 18px;
+    }
+
+    .abrar-form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--abrar-navy);
+      margin-bottom: 6px;
+    }
+
+    .abrar-form-group input,
+    .abrar-form-group select,
+    .abrar-form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 16px;
+      color: var(--abrar-navy);
+      background-color: var(--abrar-offwhite);
+      border: 1px solid var(--abrar-border);
+      border-radius: 8px;
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-form-group ::placeholder {
+      color: #94A3B8;
+      opacity: 1;
+    }
+
+    .abrar-form-group input:hover,
+    .abrar-form-group select:hover,
+    .abrar-form-group textarea:hover {
+      border-color: #CBD5E1;
+    }
+
+    .abrar-form-group input:focus,
+    .abrar-form-group select:focus,
+    .abrar-form-group textarea:focus {
+      outline: none;
+      border-color: var(--abrar-cyan);
+      background-color: var(--abrar-white);
+      box-shadow: 0 0 0 3px rgba(0, 164, 228, 0.15);
+    }
+
+    .abrar-form-group select {
+      -webkit-appearance: none;
+      appearance: none;
+      padding-right: 40px;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230A192F' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+    }
+
+    .abrar-form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .abrar-form-group input[type="file"] {
+      padding: 10px;
+      background-color: var(--abrar-white);
+      border-style: dashed;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--abrar-text-muted);
+    }
+
+    .abrar-form-group input[type="file"]::file-selector-button {
+      margin-right: 12px;
+      padding: 8px 14px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--abrar-white);
+      background-color: var(--abrar-navy);
+      border: 0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-form-group input[type="file"]::file-selector-button:hover {
+      background-color: var(--abrar-cyan);
+    }
+
+    .abrar-form-card .abrar-form-group:last-of-type { margin-bottom: 22px; }
+
+    /* 7. PROFESSIONAL MAIN FOOTER STYLES */
+    .abrar-main-footer {
+      position: relative;
+      overflow: hidden;
+      color: rgba(255, 255, 255, 0.78);
+      padding: 64px 0 24px;
+      background:
+        radial-gradient(circle at 94% 0%, rgba(0, 164, 228, 0.14), transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(228, 0, 124, 0.10), transparent 46%),
+        var(--abrar-navy);
+    }
+
+    .abrar-main-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg,
+        var(--abrar-cyan) 0 25%, var(--abrar-magenta) 25% 50%, var(--abrar-yellow) 50% 75%, rgba(255, 255, 255, 0.3) 75% 100%);
+    }
+
+    .abrar-footer-logo-img {
+      height: 56px;
+      max-width: 220px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 16px;
+    }
+
+    .abrar-footer-grid {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 44px;
+    }
+
+    .abrar-footer-col > .abrar-cmyk-bar {
+      margin: 4px 0 0;
+    }
+
+    .abrar-footer-col h4 {
+      font-family: 'Bricolage Grotesque', 'Poppins', sans-serif;
+      color: var(--abrar-white);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      margin-bottom: 22px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .abrar-footer-col h4::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 36px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--abrar-cyan), var(--abrar-magenta));
+      border-radius: 2px;
+    }
+
+    .abrar-footer-col:first-child h4 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      padding-bottom: 0;
+    }
+
+    .abrar-footer-col:first-child h4::after {
+      display: none;
+    }
+
+    .abrar-footer-col p {
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 400px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .abrar-footer-links-list li {
+      margin-bottom: 11px;
+    }
+
+    .abrar-footer-links-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .abrar-footer-links-list a,
+    .abrar-footer-links-list a:visited {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.78);
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-footer-links-list a::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+      border-top: 2px solid var(--abrar-cyan);
+      border-right: 2px solid var(--abrar-cyan);
+      transform: rotate(45deg);
+      opacity: 0.7;
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-footer-links-list a:hover {
+      color: var(--abrar-white);
+      transform: translateX(4px);
+    }
+
+    .abrar-footer-links-list a:hover::before {
+      border-color: var(--abrar-yellow);
+      opacity: 1;
+    }
+
+    .abrar-footer-contact-info li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 14px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .abrar-footer-contact-info li:last-child {
+      margin-bottom: 0;
+    }
+
+    .abrar-footer-contact-info li > span {
+      padding-top: 6px;
+      word-break: break-word;
+    }
+
+    /* Footer contact links stay identical in color to surrounding text */
+    .abrar-footer-contact-info a,
+    .abrar-footer-contact-info a:visited,
+    .abrar-footer-contact-info a:hover,
+    .abrar-footer-contact-info a:active {
+      color: inherit;
+    }
+
+    .abrar-footer-contact-info svg {
+      box-sizing: content-box;
+      flex-shrink: 0;
+      padding: 8px;
+      border-radius: 8px;
+      color: var(--abrar-yellow);
+      background-color: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .abrar-footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 24px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .abrar-footer-bottom p {
+      margin: 0;
+    }
+
+    .abrar-footer-bottom-links {
+      display: flex;
+      gap: 22px;
+    }
+
+    /* Footer bottom links stay identical in color to copyright text */
+    .abrar-footer-bottom-links a,
+    .abrar-footer-bottom-links a:visited,
+    .abrar-footer-bottom-links a:hover,
+    .abrar-footer-bottom-links a:active {
+      color: inherit;
+    }
+
+    /* Floating WhatsApp Button */
+    .abrar-whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #25D366;
+      color: var(--abrar-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+      transition: var(--abrar-transition);
+    }
+
+    .abrar-whatsapp-float:hover {
+      transform: scale(1.08) translateY(-3px);
+      background-color: #1fb858;
+    }
+
+    /* RESPONSIVE BREAKPOINTS */
+    @media (max-width: 1024px) {
+      .abrar-navbar {
+        gap: 20px;
+      }
+      .abrar-nav-links {
+        gap: 20px;
+      }
+      .abrar-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .abrar-about-text .abrar-about-trust {
+        gap: 14px;
+      }
+      .abrar-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px 30px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      :root {
+        --header-h: 68px;
+        --logo-h: 44px;
+      }
+      .abrar-navbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .abrar-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .abrar-nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-h);
+        left: 0;
+        right: 0;
+        background-color: var(--abrar-white);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px var(--gutter) 20px;
+        gap: 0;
+        border-bottom: 1px solid var(--abrar-border);
+        box-shadow: 0 15px 30px rgba(10, 25, 47, 0.1);
+      }
+      .abrar-nav-links.is-open {
+        display: flex;
+      }
+      .abrar-nav-links a {
+        padding: 14px 0;
+        border-bottom: 1px solid var(--abrar-border);
+      }
+      .abrar-nav-links a:last-child {
+        border-bottom: 0;
+      }
+      .abrar-nav-links a::after {
+        display: none;
+      }
+      .abrar-header-action {
+        margin-left: auto;
+      }
+      .abrar-nav-cta {
+        padding: 8px 16px;
+        font-size: 13px;
+      }
+      .abrar-about-grid,
+      .abrar-contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .abrar-about-visual {
+        max-width: 560px;
+        justify-self: center;
+      }
+      .abrar-hero {
+        min-height: auto;
+      }
+      .abrar-hero-body {
+        padding: calc(var(--header-h) + 36px) 0 44px;
+      }
+      .abrar-hero-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .abrar-hero-metric:nth-child(3) {
+        border-left: 0;
+      }
+      .abrar-hero-metric:nth-child(n+3) {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .abrar-logo-link {
+        min-width: 0;
+      }
+      .abrar-logo-img {
+        max-width: 150px;
+      }
+      .abrar-portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .abrar-clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --gutter: 20px;
+        --logo-h: 40px;
+      }
+      .abrar-clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .abrar-client-card {
+        height: 110px;
+        padding: 16px;
+      }
+      .abrar-hero-ctas {
+        flex-direction: column;
+      }
+      .abrar-hero-ctas .abrar-btn {
+        width: 100%;
+      }
+      .abrar-hero-meta {
+        border-radius: 18px;
+        letter-spacing: 0.8px;
+        gap: 4px 14px;
+      }
+      .abrar-hero-sep {
+        display: none;
+      }
+      .abrar-hero-content .abrar-hero-title {
+        letter-spacing: -0.6px;
+      }
+      .abrar-hero-metric {
+        padding: 18px 12px;
+      }
+      .abrar-hero::after {
+        width: 280px;
+        height: 280px;
+        background-size: 20px 20px;
+      }
+      .abrar-whatsapp-float {
+        width: 54px;
+        height: 54px;
+        bottom: 18px;
+        right: 18px;
+      }
+      .abrar-main-footer {
+        padding-top: 52px;
+      }
+      .abrar-services-grid,
+      .abrar-portfolio-grid,
+      .abrar-form-row,
+      .abrar-footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .abrar-contact-card,
+      .abrar-form-card {
+        padding: 28px 22px;
+      }
+      .abrar-vis-label,
+      .abrar-vis-cap {
+        font-size: 12px;
+        letter-spacing: 1.2px;
+      }
+      .abrar-vis-sticker {
+        font-size: 12.5px;
+        padding: 10px 14px;
+      }
+      .abrar-vis-tag {
+        padding: 8px 14px;
+        font-size: 11.5px;
+      }
+      .abrar-vis-tag strong {
+        font-size: 17px;
+      }
+      .abrar-about-text .abrar-about-trust {
+        grid-template-columns: 1fr;
+        justify-content: stretch;
+      }
+      .abrar-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .abrar-header-action {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="abrar-site">
+
+  <!-- 1. STICKY NAVBAR -->
+  <header class="abrar-header">
+    <div class="abrar-container abrar-navbar">
+      <a href="#home" class="abrar-logo-link" aria-label="Abrar Advertising & Printing Home">
+        <img src="assets/logo/logo-1.png" alt="Abrar Advertising & Printing Logo" class="abrar-logo-img">
+      </a>
+
+      <nav class="abrar-nav-links" id="abrarNavLinks" aria-label="Primary Navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="abrar-header-action">
+        <a href="#contact" class="abrar-nav-cta">Get a Quote</a>
+      </div>
+
+      <button class="abrar-menu-toggle" id="abrarMenuBtn" type="button" aria-label="Toggle Navigation" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1B. HERO SECTION -->
+    <section id="home" class="abrar-hero">
+      <div class="abrar-hero-media">
+        <img src="assets/hero.jpg" alt="Abrar Advertising & Printing Production Facility in Deira, Dubai">
+      </div>
+      <div class="abrar-hero-scrim"></div>
+
+      <div class="abrar-hero-body">
+        <div class="abrar-container">
+          <div class="abrar-hero-content">
+            <div class="abrar-hero-meta">
+              <span>Deira, Dubai</span>
+              <span class="abrar-hero-sep">•</span>
+              <span>100% In-House Production</span>
+              <span class="abrar-hero-sep">•</span>
+              <span>Fast UAE Delivery</span>
+            </div>
+
+            <h1 class="abrar-hero-title">
+              Commercial Printing & 3D LED Signage in Dubai, UAE
+            </h1>
+
+            <div class="abrar-cmyk-bar">
+              <span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span>
+            </div>
+
+            <p class="abrar-hero-subtitle">
+              From high-speed offset and 9-color digital printing to stunning 3D acrylic signage, luxury packaging, and corporate gifting—delivered direct from our Deira production hub.
+            </p>
+
+            <div class="abrar-hero-ctas">
+              <a href="#contact" class="abrar-btn abrar-btn-primary">Request an Instant Quote</a>
+              <a href="#services" class="abrar-btn abrar-btn-outline-light">Explore All Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="abrar-hero-strip">
+        <div class="abrar-container">
+          <div class="abrar-hero-strip-grid">
+            <div class="abrar-hero-metric">
+              <div class="abrar-hero-metric-val abrar-tabular">100%</div>
+              <div class="abrar-hero-metric-label">In-House Production</div>
+            </div>
+            <div class="abrar-hero-metric">
+              <div class="abrar-hero-metric-val abrar-tabular">9-Color</div>
+              <div class="abrar-hero-metric-label">State-of-the-Art Digital</div>
+            </div>
+            <div class="abrar-hero-metric">
+              <div class="abrar-hero-metric-val abrar-tabular">24/7</div>
+              <div class="abrar-hero-metric-label">Fast Turnaround & Delivery</div>
+            </div>
+            <div class="abrar-hero-metric">
+              <div class="abrar-hero-metric-val abrar-tabular">Deira</div>
+              <div class="abrar-hero-metric-label">Central Dubai Hub</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT US SECTION -->
+    <section id="about" class="abrar-section abrar-about">
+      <div class="abrar-container">
+        <div class="abrar-about-grid">
+          <figure class="abrar-about-visual">
+            <img src="assets/about.jpg" alt="Modern commercial printing machinery at Abrar Advertising & Printing" loading="lazy">
+            <div class="abrar-vis-shade"></div>
+            <span class="abrar-vis-label abrar-vis-tr">Production Mindset</span>
+            <span class="abrar-vis-sticker">CMYK<br>Ready</span>
+            <span class="abrar-vis-tag">Detail <strong>Matters</strong></span>
+            <span class="abrar-vis-cap abrar-vis-bl">Clear thinking.</span>
+            <span class="abrar-vis-cap abrar-vis-br">Precise making.</span>
+          </figure>
+
+          <div class="abrar-about-text">
+            <div class="abrar-cmyk-bar">
+              <span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span>
+            </div>
+            <span class="abrar-about-eyebrow">About Abrar</span>
+            <h2>When your brand is on the line, <span>make it count.</span></h2>
+
+            <p class="abrar-about-lead">
+              Abrar Advertising & Printing is your practical partner for making brands visible, memorable, and ready for the real world.
+            </p>
+            <p class="abrar-about-body">
+              From the first business card to the sign people see from the road, we bring commercial print, promotional products, signage, packaging, and apparel together under one roof. Every piece is approached with care for the detail, the finish, and the purpose behind it.
+            </p>
+
+            <div class="abrar-about-founder">
+              <img class="abrar-founder-photo" src="assets/founder-photo.jpg" alt="Mohammad Akkas, Founder & Director" width="72" height="72" loading="lazy">
+              <div>
+                <strong>Mohammad Akkas</strong>
+                <span>Founder & Director</span>
+              </div>
+            </div>
+
+            <ul class="abrar-about-trust">
+              <li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l2.4 1.6 2.9-.2 1.2 2.6 2.4 1.7-.7 2.8.7 2.8-2.4 1.7-1.2 2.6-2.9-.2L12 21.5l-2.4-1.6-2.9.2-1.2-2.6-2.4-1.7.7-2.8-.7-2.8 2.4-1.7 1.2-2.6 2.9.2z"/><path d="M8.6 12.2l2.3 2.3 4.5-4.7"/></svg><span>Quality-led<br>production</span></li>
+              <li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><span>Reliable<br>communication</span></li>
+              <li><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5s-6.5-6-6.5-11a6.5 6.5 0 0113 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10.5" r="2.4"/></svg><span>Serving<br>across UAE</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. OUR SERVICES SECTION -->
+    <section id="services" class="abrar-section abrar-services">
+      <div class="abrar-container">
+        <div class="abrar-section-header">
+          <div class="abrar-cmyk-bar centered">
+            <span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span>
+          </div>
+          <span class="abrar-eyebrow">What We Do</span>
+          <h2 class="abrar-section-title">Our Core Printing & <span>Branding Services</span></h2>
+          <p class="abrar-section-subtitle">End-to-end production tailored for corporate brands, events, retail storefronts, <br> and industrial teams across the UAE.</p>
+        </div>
+
+        <div class="abrar-services-grid">
+          <!-- Card 1: Digital Printing -->
+          <article class="abrar-service-card accent-cyan">
+            <img src="assets/services/img-1.jpg" alt="Digital Printing Business Cards and Stationery" class="abrar-service-img" loading="lazy">
+            <div class="abrar-service-body">
+              <div class="abrar-service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              </div>
+              <h3 class="abrar-service-title">Digital Printing</h3>
+              <ul class="abrar-service-list">
+                <li>Business Cards</li>
+                <li>Letterheads</li>
+                <li>Flyers & Leaflets</li>
+                <li>Brochures</li>
+                <li>Certificates</li>
+                <li>Diary & Notebooks</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 2: Offset Printing -->
+          <article class="abrar-service-card accent-magenta">
+            <img src="assets/services/img-2.jpg" alt="Offset Printing Catalogues and Booklets" class="abrar-service-img" loading="lazy">
+            <div class="abrar-service-body">
+              <div class="abrar-service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+              <h3 class="abrar-service-title">Offset Printing</h3>
+              <ul class="abrar-service-list">
+                <li>Booklets</li>
+                <li>Catalogues</li>
+                <li>Computer Invoice Books</li>
+                <li>Payment & Receipt Vouchers</li>
+                <li>Envelopes</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 3: Gift Item Making -->
+          <article class="abrar-service-card accent-yellow">
+            <img src="assets/services/img-4.jpg" alt="Custom Branded T-Shirts and Corporate Gifts" class="abrar-service-img" loading="lazy">
+            <div class="abrar-service-body">
+              <div class="abrar-service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+              </div>
+              <h3 class="abrar-service-title">Gift Item Making</h3>
+              <ul class="abrar-service-list">
+                <li>Customized Mugs</li>
+                <li>Bottles</li>
+                <li>T-Shirts & Uniforms</li>
+                <li>Safety Jackets</li>
+                <li>Pens</li>
+                <li>Lanyards</li>
+                <li>Awards</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 4: Signage Making -->
+          <article class="abrar-service-card accent-navy">
+            <img src="assets/services/img-3.jpg" alt="Illuminated LED Signage and 3D Acrylic Letters" class="abrar-service-img" loading="lazy">
+            <div class="abrar-service-body">
+              <div class="abrar-service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <h3 class="abrar-service-title">Signage Making</h3>
+              <ul class="abrar-service-list">
+                <li>Signboard & LED Signs</li>
+                <li>3D Acrylic Letters</li>
+                <li>Roll-Up Banners</li>
+                <li>Outdoor Banners</li>
+                <li>Stickers</li>
+                <li>Gold Foiling</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PORTFOLIO / WORK SHOWCASE -->
+    <section id="portfolio" class="abrar-section abrar-portfolio">
+      <div class="abrar-container">
+        <div class="abrar-section-header">
+          <div class="abrar-cmyk-bar centered">
+            <span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span>
+          </div>
+          <span class="abrar-eyebrow">Our Craft</span>
+          <h2 class="abrar-section-title">Portfolio & <span>Work Showcase</span></h2>
+          <p class="abrar-section-subtitle">A selection of our printing, signage, gifts and branding work.</p>
+        </div>
+
+        <div class="abrar-filter-tabs" role="group" aria-label="Portfolio Categories">
+          <button type="button" class="abrar-filter-btn active" data-filter="all" aria-pressed="true">All Work</button>
+          <button type="button" class="abrar-filter-btn" data-filter="digital" aria-pressed="false">Digital Printing</button>
+          <button type="button" class="abrar-filter-btn" data-filter="offset" aria-pressed="false">Offset Printing</button>
+          <button type="button" class="abrar-filter-btn" data-filter="gifts" aria-pressed="false">Corporate Gifts</button>
+          <button type="button" class="abrar-filter-btn" data-filter="signage" aria-pressed="false">Signage</button>
+        </div>
+
+        <div class="abrar-portfolio-grid" id="abrarPortfolioGrid">
+          <div class="abrar-portfolio-item" data-category="digital">
+            <img src="assets/portfolio/img-1.jpg" width="900" height="675" alt="Premium business cards and print samples with UV coating and foil finishes" loading="lazy">
+            <div class="abrar-portfolio-overlay">
+              <span class="abrar-portfolio-cat">Digital Printing</span>
+              <h3 class="abrar-portfolio-title">Premium Business Cards, UV & Foil Finishes</h3>
+            </div>
+          </div>
+
+          <div class="abrar-portfolio-item" data-category="digital">
+            <img src="assets/portfolio/img-2.jpg" width="900" height="675" alt="Premium printed certificates and invitation cards" loading="lazy">
+            <div class="abrar-portfolio-overlay">
+              <span class="abrar-portfolio-cat">Digital Printing</span>
+              <h3 class="abrar-portfolio-title">Certificates & Invitations</h3>
+            </div>
+          </div>
+
+          <div class="abrar-portfolio-item" data-category="offset">
+            <img src="assets/portfolio/img-3.jpg" width="900" height="675" alt="Offset printed brochures and booklets" loading="lazy">
+            <div class="abrar-portfolio-overlay">
+              <span class="abrar-portfolio-cat">Offset Printing</span>
+              <h3 class="abrar-portfolio-title">Brochures, Flyers & Booklets</h3>
+            </div>
+          </div>
+
+          <div class="abrar-portfolio-item" data-category="signage">
+            <img src="assets/portfolio/img-4.jpg" width="900" height="675" alt="3D indoor signage letters and name plates" loading="lazy">
+            <div class="abrar-portfolio-overlay">
+              <span class="abrar-portfolio-cat">Signage Making</span>
+              <h3 class="abrar-portfolio-title">3D Indoor Signage & Letters</h3>
+            </div>
+          </div>
+
+          <div class="abrar-portfolio-item" data-category="gifts">
+            <img src="assets/portfolio/img-5.jpg" width="900" height="675" alt="Lanyards, badges, keychains and USB event gift items" loading="lazy">
+            <div class="abrar-portfolio-overlay">
+              <span class="abrar-portfolio-cat">Corporate Gifts & Items</span>
+              <h3 class="abrar-portfolio-title">Event Gift Items</h3>
+            </div>
+          </div>
+
+          <div class="abrar-portfolio-item" data-category="gifts">
+            <img src="assets/portfolio/img-6.jpg" width="900" height="675" alt="Branded jerseys, safety vests and T-shirts" loading="lazy">
+            <div class="abrar-portfolio-overlay">
+              <span class="abrar-portfolio-cat">Gift Item Making</span>
+              <h3 class="abrar-portfolio-title">Uniforms, Jerseys & Safety Apparel</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. VALUED CLIENTS SECTION -->
+    <section id="clients" class="abrar-section abrar-clients">
+      <div class="abrar-container">
+        <div class="abrar-section-header">
+          <div class="abrar-cmyk-bar centered">
+            <span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span>
+          </div>
+          <span class="abrar-eyebrow">Our Clients</span>
+          <h2 class="abrar-section-title">Brands We <span>Work With</span></h2>
+          <p class="abrar-section-subtitle">
+            Companies across the UAE that trust Abrar Advertising & Printing with their printing, <br> signage and branding needs.
+          </p>
+        </div>
+
+        <div class="abrar-clients-grid">
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-1.jpg" width="380" height="101" alt="Al-Futtaim Automotive logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-2.jpg" width="380" height="129" alt="Porter logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-3.jpg" width="380" height="100" alt="Arabia Horizons logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-4.jpg" width="380" height="176" alt="Inoi logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-5.jpg" width="380" height="156" alt="Blue Tel logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-6.jpg" width="380" height="177" alt="Emirates Paints logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-7.jpg" width="380" height="191" alt="Dibba logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-8.jpg" width="379" height="247" alt="Art Touch logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-9.jpg" width="380" height="202" alt="ARC Manpower logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-10.jpg" width="380" height="238" alt="Adamjee Insurance logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-11.jpg" width="380" height="252" alt="Organic Hub logo" loading="lazy">
+          </figure>
+          <figure class="abrar-client-card">
+            <img src="assets/clients/img-12.jpg" width="339" height="292" alt="Otex logo" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT, LOCATION & QUOTE FORM SECTION -->
+    <section id="contact" class="abrar-section abrar-contact">
+      <div class="abrar-container">
+        <div class="abrar-section-header">
+          <div class="abrar-cmyk-bar centered">
+            <span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span>
+          </div>
+          <span class="abrar-eyebrow">Start Your Project</span>
+          <h2 class="abrar-section-title">Request a Free Quote or <span>Visit Us in Deira</span></h2>
+          <p class="abrar-section-subtitle">Send us your project specifications or upload your artwork for a fast, competitive quotation.</p>
+        </div>
+
+        <div class="abrar-contact-grid">
+          <!-- Left Column: Company Contact Details -->
+          <div class="abrar-contact-card">
+            <h3>Abrar Advertising & Printing</h3>
+            <p class="abrar-contact-lead">Direct in-house support for businesses across Dubai and the UAE.</p>
+
+            <div class="abrar-info-list">
+              <div class="abrar-info-item">
+                <div class="abrar-info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <div>
+                  <span class="abrar-info-label">Proprietor</span>
+                  <span class="abrar-info-value">Mohammad Akkas</span>
+                </div>
+              </div>
+
+              <div class="abrar-info-item">
+                <div class="abrar-info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div>
+                  <span class="abrar-info-label">Phone / WhatsApp</span>
+                  <span class="abrar-info-value"><a href="tel:+971551334898">+971 55 133 4898</a></span>
+                </div>
+              </div>
+
+              <div class="abrar-info-item">
+                <div class="abrar-info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div>
+                  <span class="abrar-info-label">Email</span>
+                  <span class="abrar-info-value"><a href="mailto:mohammadakkas90@gmail.com">mohammadakkas90@gmail.com</a></span>
+                </div>
+              </div>
+
+              <div class="abrar-info-item">
+                <div class="abrar-info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div>
+                  <span class="abrar-info-label">Address</span>
+                  <span class="abrar-info-value">P.O. Box : 86420, Deira, Dubai - UAE</span>
+                </div>
+              </div>
+
+              <div class="abrar-info-item">
+                <div class="abrar-info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                </div>
+                <div>
+                  <span class="abrar-info-label">Website</span>
+                  <span class="abrar-info-value"><a href="https://www.advertisingprintshop.com" target="_blank" rel="noopener noreferrer">www.advertisingprintshop.com</a></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="abrar-contact-cta">
+              <a href="https://wa.me/971551334898" target="_blank" rel="noopener noreferrer" class="abrar-btn abrar-btn-whatsapp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.45 14.04c-.23.65-1.34 1.24-1.85 1.32-.47.07-1.07.1-1.73-.11-.4-.13-.92-.3-1.58-.58-2.78-1.2-4.6-4-4.74-4.19-.14-.18-1.13-1.5-1.13-2.86s.71-2.03.96-2.31c.25-.28.55-.35.73-.35.18 0 .37 0 .53.01.17.01.4-.06.62.48.23.55.78 1.9.85 2.04.07.14.11.3.02.48-.09.18-.14.3-.28.46-.14.16-.29.35-.41.47-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.18.69-.8.87-1.08.18-.28.37-.23.62-.14.25.09 1.6.75 1.88.89.28.14.46.21.53.32.07.12.07.67-.16 1.32z"/></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Lead Generation Form -->
+          <div class="abrar-form-card">
+            <h3>Get a Fast Print Quote</h3>
+            <p class="abrar-form-sub">Fill in your details below and our production team will get back to you promptly.</p>
+
+            <form action="mailto:mohammadakkas90@gmail.com" method="post" enctype="multipart/form-data">
+              <div class="abrar-form-row">
+                <div class="abrar-form-group">
+                  <label for="abrar-name">Full Name *</label>
+                  <input type="text" id="abrar-name" name="full_name" placeholder="e.g. Ahmed Al Mansoori" required>
+                </div>
+                <div class="abrar-form-group">
+                  <label for="abrar-phone">Phone / WhatsApp Number *</label>
+                  <input type="tel" id="abrar-phone" name="phone" placeholder="+971 5X XXX XXXX" required>
+                </div>
+              </div>
+
+              <div class="abrar-form-row">
+                <div class="abrar-form-group">
+                  <label for="abrar-email">Email Address *</label>
+                  <input type="email" id="abrar-email" name="email" placeholder="you@company.ae" required>
+                </div>
+                <div class="abrar-form-group">
+                  <label for="abrar-service">Select Service *</label>
+                  <select id="abrar-service" name="service" required>
+                    <option value="">-- Choose a Service --</option>
+                    <option value="Digital Printing">Digital Printing</option>
+                    <option value="Offset Printing">Offset Printing</option>
+                    <option value="Gift Item Making">Gift Item Making</option>
+                    <option value="Signage Making">Signage Making</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="abrar-form-group">
+                <label for="abrar-details">Project Details & Quantity *</label>
+                <textarea id="abrar-details" name="details" rows="4" placeholder="Describe size, paper/material type, quantity, and preferred delivery timeline..." required></textarea>
+              </div>
+
+              <div class="abrar-form-group">
+                <label for="abrar-file">Attach Artwork / Logo (Optional)</label>
+                <input type="file" id="abrar-file" name="artwork_file" accept=".pdf,.ai,.eps,.png,.jpg,.jpeg,.svg,.zip">
+              </div>
+
+              <button type="submit" class="abrar-btn abrar-btn-primary abrar-btn-block">
+                Get Free Quote
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. PROFESSIONAL MULTI-COLUMN FOOTER -->
+  <footer class="abrar-main-footer">
+    <div class="abrar-container">
+      <div class="abrar-footer-grid">
+        <!-- Col 1: About Company & Footer Dark Logo -->
+        <div class="abrar-footer-col">
+          <img src="assets/logo/logo-2.png" alt="Abrar Advertising & Printing Footer Logo" class="abrar-footer-logo-img">
+          <h4>Abrar Advertising & Printing</h4>
+          <p>Your premier in-house print partner in Deira, Dubai. Delivering high-quality digital printing, offset press production, corporate gifts, and illuminated signage solutions with fast turnaround times.</p>
+          <div class="abrar-cmyk-bar">
+            <span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="abrar-footer-col">
+          <h4>Quick Links</h4>
+          <ul class="abrar-footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#clients">Valued Clients</a></li>
+            <li><a href="#contact">Contact & Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="abrar-footer-col">
+          <h4>Core Services</h4>
+          <ul class="abrar-footer-links-list">
+            <li><a href="#services">Digital Printing</a></li>
+            <li><a href="#services">Offset Printing</a></li>
+            <li><a href="#services">Corporate Gift Items</a></li>
+            <li><a href="#services">Signage & LED Signs</a></li>
+            <li><a href="#services">3D Acrylic Letters</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Summary -->
+        <div class="abrar-footer-col">
+          <h4>Head Office</h4>
+          <ul class="abrar-footer-contact-info">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>P.O. Box : 86420, Deira, Dubai - UAE</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span><a href="tel:+971551334898">+971 55 133 4898</a></span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span><a href="mailto:mohammadakkas90@gmail.com">mohammadakkas90@gmail.com</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Copyright Bar -->
+      <div class="abrar-footer-bottom">
+        <p>© 2026 Abrar Advertising & Printing. All Rights Reserved. | In-House Print Production House, Deira, Dubai</p>
+        <div class="abrar-footer-bottom-links">
+          <a href="#home">Privacy Policy</a>
+          <a href="#home">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/971551334898" target="_blank" rel="noopener noreferrer" class="abrar-whatsapp-float" aria-label="Chat on WhatsApp with Abrar Advertising & Printing">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.81 14.04c-.24.68-1.41 1.3-1.95 1.38-.52.08-1.18.11-1.9-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5.01-4.38-5.16-4.58-.15-.2-1.23-1.64-1.23-3.13 0-1.49.78-2.22 1.06-2.52.28-.3.6-.38.8-.38.2 0 .4 0 .58.01.19.01.44-.07.68.52.24.6.83 2.02.9 2.17.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.32.4-.45.54-.15.15-.31.32-.13.62.18.3.78 1.29 1.68 2.09 1.15 1.03 2.12 1.35 2.42 1.5.3.15.48.13.66-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.28.1 1.77.84 2.07.99.3.15.5.23.58.35.08.13.08.73-.17 1.41z"/>
+    </svg>
+  </a>
+
+</div>
+
+<!-- MINIMAL VANILLA JS FOR MOBILE MENU & PORTFOLIO FILTERS -->
+<script>
+  (function () {
+    // Mobile Menu Toggle
+    var menuBtn = document.getElementById('abrarMenuBtn');
+    var navLinks = document.getElementById('abrarNavLinks');
+
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', function () {
+        var isOpen = navLinks.classList.toggle('is-open');
+        menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      var links = navLinks.querySelectorAll('a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function () {
+          navLinks.classList.remove('is-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      }
+    }
+
+    // Portfolio Category Filters
+    var filterBtns = document.querySelectorAll('.abrar-filter-btn');
+    var portfolioItems = document.querySelectorAll('.abrar-portfolio-item');
+
+    for (var j = 0; j < filterBtns.length; j++) {
+      filterBtns[j].addEventListener('click', function () {
+        for (var k = 0; k < filterBtns.length; k++) {
+          filterBtns[k].classList.remove('active');
+          filterBtns[k].setAttribute('aria-pressed', 'false');
+        }
+        this.classList.add('active');
+        this.setAttribute('aria-pressed', 'true');
+
+        var selected = this.getAttribute('data-filter');
+        for (var m = 0; m < portfolioItems.length; m++) {
+          var itemCat = portfolioItems[m].getAttribute('data-category');
+          if (selected === 'all' || itemCat === selected) {
+            portfolioItems[m].classList.remove('is-hidden');
+          } else {
+            portfolioItems[m].classList.add('is-hidden');
+          }
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
