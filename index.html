@@ -325,7 +325,7 @@
       color: var(--abrar-navy);
     }
 
-    /* 1B. HERO SECTION */
+    /* 1B. HERO SECTION (Clean, No Scrim Overlay or Shape) */
     .abrar-hero {
       position: relative;
       display: flex;
@@ -351,32 +351,6 @@
       object-position: center;
     }
 
-    .abrar-hero-scrim {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        radial-gradient(circle at 88% 14%, rgba(0, 164, 228, 0.28), transparent 42%),
-        radial-gradient(circle at 70% 70%, rgba(228, 0, 124, 0.18), transparent 45%),
-        linear-gradient(105deg, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.86) 55%, rgba(10, 25, 47, 0.62) 100%);
-    }
-
-    .abrar-hero::after {
-      content: '';
-      position: absolute;
-      right: -40px;
-      bottom: 60px;
-      width: 520px;
-      height: 520px;
-      z-index: 1;
-      pointer-events: none;
-      opacity: 0.35;
-      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.7) 2px, transparent 2.6px);
-      background-size: 24px 24px;
-      -webkit-mask-image: radial-gradient(circle at 100% 100%, #000 0%, transparent 70%);
-      mask-image: radial-gradient(circle at 100% 100%, #000 0%, transparent 70%);
-    }
-
     .abrar-hero-body {
       position: relative;
       z-index: 2;
@@ -399,8 +373,8 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 6px 12px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(10, 25, 47, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       padding: 8px 18px;
       border-radius: 50px;
       font-size: 13px;
@@ -425,6 +399,7 @@
       color: var(--abrar-white);
       margin-bottom: 22px;
       text-wrap: balance;
+      text-shadow: 0 2px 18px rgba(10, 25, 47, 0.55);
     }
 
     .abrar-hero-content .abrar-cmyk-bar {
@@ -436,9 +411,10 @@
     .abrar-hero-content .abrar-hero-subtitle {
       font-size: clamp(17px, 1.8vw, 21px);
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.85);
+      color: var(--abrar-white);
       max-width: 660px;
       margin-bottom: 36px;
+      text-shadow: 0 2px 12px rgba(10, 25, 47, 0.65);
     }
 
     .abrar-hero-ctas {
@@ -453,9 +429,10 @@
     }
 
     .abrar-btn-outline-light {
-      background: transparent;
+      background: rgba(10, 25, 47, 0.55);
       color: var(--abrar-white);
-      border: 2px solid rgba(255, 255, 255, 0.55);
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
     }
 
     .abrar-btn-outline-light:hover {
@@ -469,7 +446,7 @@
     .abrar-hero-strip {
       position: relative;
       z-index: 2;
-      background: rgba(10, 25, 47, 0.72);
+      background: rgba(10, 25, 47, 0.78);
       border-top: 1px solid rgba(255, 255, 255, 0.14);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -506,7 +483,7 @@
     .abrar-hero-metric-label {
       font-size: 14px;
       font-weight: 500;
-      color: rgba(255, 255, 255, 0.72);
+      color: rgba(255, 255, 255, 0.8);
       letter-spacing: 0.3px;
     }
 
@@ -725,15 +702,15 @@
       color: var(--abrar-cyan);
     }
 
-    /* 3. OUR SERVICES SECTION */
+    /* 3. OUR SERVICES SECTION (6 Cards: 3x2 Desktop Grid) */
     .abrar-services {
       background-color: var(--abrar-offwhite);
     }
 
     .abrar-services-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
     }
 
     .abrar-service-card {
@@ -759,12 +736,12 @@
 
     .abrar-service-img {
       width: 100%;
-      height: 180px;
+      height: 190px;
       object-fit: cover;
     }
 
     .abrar-service-body {
-      padding: 24px 24px 28px;
+      padding: 24px 26px 28px;
       flex: 1;
     }
 
@@ -835,7 +812,7 @@
     }
 
     .abrar-filter-btn {
-      padding: 10px 20px;
+      padding: 10px 18px;
       font-family: inherit;
       font-size: 14px;
       font-weight: 600;
@@ -1597,11 +1574,6 @@
       .abrar-hero-metric {
         padding: 18px 12px;
       }
-      .abrar-hero::after {
-        width: 280px;
-        height: 280px;
-        background-size: 20px 20px;
-      }
       .abrar-whatsapp-float {
         width: 54px;
         height: 54px;
@@ -1690,12 +1662,11 @@
   </header>
 
   <main>
-    <!-- 1B. HERO SECTION -->
+    <!-- 1B. HERO SECTION (Clean Full Image without Overlay) -->
     <section id="home" class="abrar-hero">
       <div class="abrar-hero-media">
         <img src="assets/hero.jpg" alt="Abrar Advertising & Printing Production Facility in Deira, Dubai">
       </div>
-      <div class="abrar-hero-scrim"></div>
 
       <div class="abrar-hero-body">
         <div class="abrar-container">
@@ -1798,7 +1769,7 @@
       </div>
     </section>
 
-    <!-- 3. OUR SERVICES SECTION -->
+    <!-- 3. OUR SERVICES SECTION (6 Cards) -->
     <section id="services" class="abrar-section abrar-services">
       <div class="abrar-container">
         <div class="abrar-section-header">
@@ -1811,78 +1782,110 @@
         </div>
 
         <div class="abrar-services-grid">
-          <!-- Card 1: Digital Printing -->
+          <!-- Card 1: Digital & Commercial Printing -->
           <article class="abrar-service-card accent-cyan">
-            <img src="assets/services/img-1.jpg" alt="Digital Printing Business Cards and Stationery" class="abrar-service-img" loading="lazy">
+            <img src="assets/services/img-1.jpg" alt="Business Cards, Letterheads and Printed Stationery" class="abrar-service-img" loading="lazy">
             <div class="abrar-service-body">
               <div class="abrar-service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
               </div>
-              <h3 class="abrar-service-title">Digital Printing</h3>
+              <h3 class="abrar-service-title">Digital & Commercial Printing</h3>
               <ul class="abrar-service-list">
-                <li>Business Cards</li>
-                <li>Letterheads</li>
-                <li>Flyers & Leaflets</li>
-                <li>Brochures</li>
-                <li>Certificates</li>
-                <li>Diary & Notebooks</li>
+                <li>Business Cards & Letterheads</li>
+                <li>Envelopes & Folders</li>
+                <li>Bill Books & NCR Vouchers</li>
+                <li>Computer Invoices & Receipts</li>
+                <li>Stickers & Product Labels</li>
               </ul>
             </div>
           </article>
 
-          <!-- Card 2: Offset Printing -->
+          <!-- Card 2: Offset & Marketing Print -->
           <article class="abrar-service-card accent-magenta">
-            <img src="assets/services/img-2.jpg" alt="Offset Printing Catalogues and Booklets" class="abrar-service-img" loading="lazy">
+            <img src="assets/services/img-2.jpg" alt="Offset Press Brochures and Flyers Printing" class="abrar-service-img" loading="lazy">
             <div class="abrar-service-body">
               <div class="abrar-service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
               </div>
-              <h3 class="abrar-service-title">Offset Printing</h3>
+              <h3 class="abrar-service-title">Offset & Marketing Print</h3>
               <ul class="abrar-service-list">
-                <li>Booklets</li>
-                <li>Catalogues</li>
-                <li>Computer Invoice Books</li>
-                <li>Payment & Receipt Vouchers</li>
-                <li>Envelopes</li>
+                <li>Brochures & Company Profiles</li>
+                <li>Flyers & Promotional Leaflets</li>
+                <li>Catalogs & Magazines</li>
+                <li>Posters & Danglers</li>
+                <li>Calendars & Greeting Cards</li>
               </ul>
             </div>
           </article>
 
-          <!-- Card 3: Gift Item Making -->
-          <article class="abrar-service-card accent-yellow">
-            <img src="assets/services/img-4.jpg" alt="Custom Branded T-Shirts and Corporate Gifts" class="abrar-service-img" loading="lazy">
-            <div class="abrar-service-body">
-              <div class="abrar-service-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
-              </div>
-              <h3 class="abrar-service-title">Gift Item Making</h3>
-              <ul class="abrar-service-list">
-                <li>Customized Mugs</li>
-                <li>Bottles</li>
-                <li>T-Shirts & Uniforms</li>
-                <li>Safety Jackets</li>
-                <li>Pens</li>
-                <li>Lanyards</li>
-                <li>Awards</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Card 4: Signage Making -->
+          <!-- Card 3: 3D LED & Outdoor Signage -->
           <article class="abrar-service-card accent-navy">
-            <img src="assets/services/img-3.jpg" alt="Illuminated LED Signage and 3D Acrylic Letters" class="abrar-service-img" loading="lazy">
+            <img src="assets/services/img-3.jpg" alt="Illuminated 3D LED Signboards and Outdoor Signage" class="abrar-service-img" loading="lazy">
             <div class="abrar-service-body">
               <div class="abrar-service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
               </div>
-              <h3 class="abrar-service-title">Signage Making</h3>
+              <h3 class="abrar-service-title">3D LED & Outdoor Signage</h3>
               <ul class="abrar-service-list">
-                <li>Signboard & LED Signs</li>
-                <li>3D Acrylic Letters</li>
-                <li>Roll-Up Banners</li>
-                <li>Outdoor Banners</li>
-                <li>Stickers</li>
-                <li>Gold Foiling</li>
+                <li>3D LED & Acrylic Signboards</li>
+                <li>Roll-Up & Pop-Up Banners</li>
+                <li>Flex & Outdoor Vinyl Banners</li>
+                <li>Vehicle & Fleet Branding</li>
+                <li>Safety & Wayfinding Signs</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 4: Packaging & Custom Apparel -->
+          <article class="abrar-service-card accent-yellow">
+            <img src="assets/services/img-4.jpg" alt="Custom Shopping Bags, Packaging Boxes and Branded Uniforms" class="abrar-service-img" loading="lazy">
+            <div class="abrar-service-body">
+              <div class="abrar-service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              </div>
+              <h3 class="abrar-service-title">Packaging & Custom Apparel</h3>
+              <ul class="abrar-service-list">
+                <li>Luxury Paper & Shopping Bags</li>
+                <li>Custom Packaging & Gift Boxes</li>
+                <li>Gold & Silver Hot Foiling</li>
+                <li>Custom T-Shirts & Polo Shirts</li>
+                <li>Coveralls, Uniforms & Safety Jackets</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 5: Stamp Making & Official Seals -->
+          <article class="abrar-service-card accent-cyan">
+            <img src="assets/services/img-5.jpg" alt="Self-Inking Company Stamps, Official Seals and Embossers" class="abrar-service-img" loading="lazy">
+            <div class="abrar-service-body">
+              <div class="abrar-service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"></path><path d="M19 18H5v-2a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v2z"></path><path d="M10 13V8.5a2.5 2.5 0 0 1 5 0V13"></path><circle cx="12.5" cy="5.5" r="2.5"></circle></svg>
+              </div>
+              <h3 class="abrar-service-title">Stamp Making & Official Seals</h3>
+              <ul class="abrar-service-list">
+                <li>Self-Inking Company Stamps</li>
+                <li>Pre-Inked & Flash Stamps</li>
+                <li>Wooden & Rubber Office Seals</li>
+                <li>Date & Numbering Stamps</li>
+                <li>Official Embossing Seals</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 6: Corporate Gifts & Promotional Items -->
+          <article class="abrar-service-card accent-magenta">
+            <img src="assets/services/img-6.jpg" alt="Custom Printed Mugs, Diaries, Pens and VIP Corporate Gift Sets" class="abrar-service-img" loading="lazy">
+            <div class="abrar-service-body">
+              <div class="abrar-service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+              </div>
+              <h3 class="abrar-service-title">Corporate Gifts & Promotional Items</h3>
+              <ul class="abrar-service-list">
+                <li>Custom Diaries & Notebooks</li>
+                <li>Engraved Metal & Plastic Pens</li>
+                <li>Custom Mugs & Thermo Flasks</li>
+                <li>Lanyards, ID Cards & Keychains</li>
+                <li>VIP Corporate Gift Sets</li>
               </ul>
             </div>
           </article>
@@ -1899,38 +1902,40 @@
           </div>
           <span class="abrar-eyebrow">Our Craft</span>
           <h2 class="abrar-section-title">Portfolio & <span>Work Showcase</span></h2>
-          <p class="abrar-section-subtitle">A selection of our printing, signage, gifts and branding work.</p>
+          <p class="abrar-section-subtitle">A selection of our printing, signage, stamps, gifts and branding work.</p>
         </div>
 
         <div class="abrar-filter-tabs" role="group" aria-label="Portfolio Categories">
           <button type="button" class="abrar-filter-btn active" data-filter="all" aria-pressed="true">All Work</button>
-          <button type="button" class="abrar-filter-btn" data-filter="digital" aria-pressed="false">Digital Printing</button>
-          <button type="button" class="abrar-filter-btn" data-filter="offset" aria-pressed="false">Offset Printing</button>
+          <button type="button" class="abrar-filter-btn" data-filter="digital" aria-pressed="false">Digital & Commercial</button>
+          <button type="button" class="abrar-filter-btn" data-filter="offset" aria-pressed="false">Offset Print</button>
+          <button type="button" class="abrar-filter-btn" data-filter="signage" aria-pressed="false">3D LED Signage</button>
+          <button type="button" class="abrar-filter-btn" data-filter="packaging" aria-pressed="false">Packaging & Apparel</button>
+          <button type="button" class="abrar-filter-btn" data-filter="stamps" aria-pressed="false">Stamp Making</button>
           <button type="button" class="abrar-filter-btn" data-filter="gifts" aria-pressed="false">Corporate Gifts</button>
-          <button type="button" class="abrar-filter-btn" data-filter="signage" aria-pressed="false">Signage</button>
         </div>
 
         <div class="abrar-portfolio-grid" id="abrarPortfolioGrid">
           <div class="abrar-portfolio-item" data-category="digital">
             <img src="assets/portfolio/img-1.jpg" width="900" height="675" alt="Premium business cards and print samples with UV coating and foil finishes" loading="lazy">
             <div class="abrar-portfolio-overlay">
-              <span class="abrar-portfolio-cat">Digital Printing</span>
+              <span class="abrar-portfolio-cat">Digital & Commercial Printing</span>
               <h3 class="abrar-portfolio-title">Premium Business Cards, UV & Foil Finishes</h3>
             </div>
           </div>
 
-          <div class="abrar-portfolio-item" data-category="digital">
-            <img src="assets/portfolio/img-2.jpg" width="900" height="675" alt="Premium printed certificates and invitation cards" loading="lazy">
+          <div class="abrar-portfolio-item" data-category="stamps">
+            <img src="assets/portfolio/img-2.jpg" width="900" height="675" alt="Self-inking company stamps, official seals and embossing stamps" loading="lazy">
             <div class="abrar-portfolio-overlay">
-              <span class="abrar-portfolio-cat">Digital Printing</span>
-              <h3 class="abrar-portfolio-title">Certificates & Invitations</h3>
+              <span class="abrar-portfolio-cat">Stamp Making & Official Seals</span>
+              <h3 class="abrar-portfolio-title">Self-Inking Stamps & Official Seals</h3>
             </div>
           </div>
 
           <div class="abrar-portfolio-item" data-category="offset">
             <img src="assets/portfolio/img-3.jpg" width="900" height="675" alt="Offset printed brochures and booklets" loading="lazy">
             <div class="abrar-portfolio-overlay">
-              <span class="abrar-portfolio-cat">Offset Printing</span>
+              <span class="abrar-portfolio-cat">Offset & Marketing Print</span>
               <h3 class="abrar-portfolio-title">Brochures, Flyers & Booklets</h3>
             </div>
           </div>
@@ -1938,24 +1943,24 @@
           <div class="abrar-portfolio-item" data-category="signage">
             <img src="assets/portfolio/img-4.jpg" width="900" height="675" alt="3D indoor signage letters and name plates" loading="lazy">
             <div class="abrar-portfolio-overlay">
-              <span class="abrar-portfolio-cat">Signage Making</span>
-              <h3 class="abrar-portfolio-title">3D Indoor Signage & Letters</h3>
+              <span class="abrar-portfolio-cat">3D LED & Outdoor Signage</span>
+              <h3 class="abrar-portfolio-title">3D LED Signage & Acrylic Letters</h3>
             </div>
           </div>
 
           <div class="abrar-portfolio-item" data-category="gifts">
-            <img src="assets/portfolio/img-5.jpg" width="900" height="675" alt="Lanyards, badges, keychains and USB event gift items" loading="lazy">
+            <img src="assets/portfolio/img-5.jpg" width="900" height="675" alt="Lanyards, badges, keychains and VIP corporate gift sets" loading="lazy">
             <div class="abrar-portfolio-overlay">
-              <span class="abrar-portfolio-cat">Corporate Gifts & Items</span>
-              <h3 class="abrar-portfolio-title">Event Gift Items</h3>
+              <span class="abrar-portfolio-cat">Corporate Gifts & Promotional Items</span>
+              <h3 class="abrar-portfolio-title">VIP Corporate Gift Sets & Event Items</h3>
             </div>
           </div>
 
-          <div class="abrar-portfolio-item" data-category="gifts">
-            <img src="assets/portfolio/img-6.jpg" width="900" height="675" alt="Branded jerseys, safety vests and T-shirts" loading="lazy">
+          <div class="abrar-portfolio-item" data-category="packaging">
+            <img src="assets/portfolio/img-6.jpg" width="900" height="675" alt="Branded jerseys, safety vests, uniforms and custom packaging" loading="lazy">
             <div class="abrar-portfolio-overlay">
-              <span class="abrar-portfolio-cat">Gift Item Making</span>
-              <h3 class="abrar-portfolio-title">Uniforms, Jerseys & Safety Apparel</h3>
+              <span class="abrar-portfolio-cat">Packaging & Custom Apparel</span>
+              <h3 class="abrar-portfolio-title">Uniforms, Safety Apparel & Custom Packaging</h3>
             </div>
           </div>
         </div>
@@ -2017,7 +2022,7 @@
       </div>
     </section>
 
-    <!-- 6. CONTACT, LOCATION & QUOTE FORM SECTION -->
+    <!-- 6. COMBINED CONTACT, LOCATION & QUOTE FORM SECTION -->
     <section id="contact" class="abrar-section abrar-contact">
       <div class="abrar-container">
         <div class="abrar-section-header">
@@ -2121,10 +2126,12 @@
                   <label for="abrar-service">Select Service *</label>
                   <select id="abrar-service" name="service" required>
                     <option value="">-- Choose a Service --</option>
-                    <option value="Digital Printing">Digital Printing</option>
-                    <option value="Offset Printing">Offset Printing</option>
-                    <option value="Gift Item Making">Gift Item Making</option>
-                    <option value="Signage Making">Signage Making</option>
+                    <option value="Digital & Commercial Printing">Digital & Commercial Printing</option>
+                    <option value="Offset & Marketing Print">Offset & Marketing Print</option>
+                    <option value="3D LED & Outdoor Signage">3D LED & Outdoor Signage</option>
+                    <option value="Packaging & Custom Apparel">Packaging & Custom Apparel</option>
+                    <option value="Stamp Making & Official Seals">Stamp Making & Official Seals</option>
+                    <option value="Corporate Gifts & Promotional Items">Corporate Gifts & Promotional Items</option>
                   </select>
                 </div>
               </div>
@@ -2158,7 +2165,7 @@
         <div class="abrar-footer-col">
           <img src="assets/logo/logo-2.png" alt="Abrar Advertising & Printing Footer Logo" class="abrar-footer-logo-img">
           <h4>Abrar Advertising & Printing</h4>
-          <p>Your premier in-house print partner in Deira, Dubai. Delivering high-quality digital printing, offset press production, corporate gifts, and illuminated signage solutions with fast turnaround times.</p>
+          <p>Your premier in-house print partner in Deira, Dubai. Delivering high-quality digital printing, offset press production, corporate gifts, official stamps, and illuminated signage solutions with fast turnaround times.</p>
           <div class="abrar-cmyk-bar">
             <span class="c"></span><span class="m"></span><span class="y"></span><span class="k"></span>
           </div>
@@ -2181,11 +2188,12 @@
         <div class="abrar-footer-col">
           <h4>Core Services</h4>
           <ul class="abrar-footer-links-list">
-            <li><a href="#services">Digital Printing</a></li>
-            <li><a href="#services">Offset Printing</a></li>
-            <li><a href="#services">Corporate Gift Items</a></li>
-            <li><a href="#services">Signage & LED Signs</a></li>
-            <li><a href="#services">3D Acrylic Letters</a></li>
+            <li><a href="#services">Digital & Commercial Printing</a></li>
+            <li><a href="#services">Offset & Marketing Print</a></li>
+            <li><a href="#services">3D LED & Outdoor Signage</a></li>
+            <li><a href="#services">Packaging & Custom Apparel</a></li>
+            <li><a href="#services">Stamp Making & Seals</a></li>
+            <li><a href="#services">Corporate Gifts</a></li>
           </ul>
         </div>
 
